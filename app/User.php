@@ -6,8 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
-{
+class User extends Authenticatable implements JWTSubject {
     use Notifiable;
 
     /**
@@ -28,12 +27,10 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
-    public function getJWTIdentifier()
-    {
+    public function getJWTIdentifier() {
         return $this->getKey();
     }
-    public function getJWTCustomClaims()
-    {
+    public function getJWTCustomClaims() {
         return [];
     }
 }
