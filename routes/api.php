@@ -24,4 +24,5 @@ Route::post('login', 'UserController@authenticate');
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', 'UserController@getAuthenticatedUser');
     Route::get('categories', 'CategoryController@index');
+    Route::get('categories_features', 'CategoryFeatureController@index');
 });

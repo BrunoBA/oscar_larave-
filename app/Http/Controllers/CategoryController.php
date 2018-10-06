@@ -12,6 +12,6 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return Category::all()->toJson();
+        return response()->json(Category::all());
     }
 }

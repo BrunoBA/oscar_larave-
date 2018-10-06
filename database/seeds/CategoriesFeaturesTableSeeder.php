@@ -11,7 +11,7 @@ class CategoriesFeaturesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('category_features')->insert([
+        DB::table('category_feature')->insert([
             [ 'winner' => false, 'feature_id' => 1, 'category_id' => 1 ],
             [ 'winner' => false, 'feature_id' => 2, 'category_id' => 1 ],
             [ 'winner' => false, 'feature_id' => 3, 'category_id' => 1 ],
