@@ -20,10 +20,10 @@ use Illuminate\Http\Request;
 
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@authenticate');
+Route::get('categories', 'CategoryController@index');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', 'UserController@getAuthenticatedUser');
-    Route::get('categories', 'CategoryController@index');
     Route::get('categories_features', 'CategoryFeatureController@index');
 
     Route::post('/category/{category_id}/feature/{feature_id}', 'BetController@store');
