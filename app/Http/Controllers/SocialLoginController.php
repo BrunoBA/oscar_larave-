@@ -31,8 +31,6 @@ class SocialLoginController extends Controller {
             $socialUser = $newUser;
         }
 
-        dd($socialUser);
-
         $token = JWTAuth::fromUser($socialUser);
 
         return response()->json(compact('token'), 200);
