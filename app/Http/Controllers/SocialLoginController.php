@@ -15,7 +15,24 @@ class SocialLoginController extends Controller {
 
     public function facebook () {
         $user = Socialite::driver('facebook')->user();
-        dd($user);
+        $token = JWTAuth::fromUser($user);
+
+        $socialUser = User::where('email', $user->email)->first();
+
+        $password = str_random(8);
+        if (!$socialUser) {
+            $newUser = User::create([
+                'email' => $user->email,
+                'name' => $user->name,
+                'password' => Hash::make($password)
+            ]);
+
+            $socialUser = $newUser;
+        }
+
+        $token = JWTAuth::fromUser($socialUser);
+
+        return response()->json(compact('token'), 200);
 
     }
 
