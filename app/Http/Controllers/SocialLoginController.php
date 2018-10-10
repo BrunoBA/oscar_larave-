@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Socialite;
+use JWTAuth;
 
 class SocialLoginController extends Controller {
 
@@ -18,8 +19,6 @@ class SocialLoginController extends Controller {
         $token = JWTAuth::fromUser($user);
 
         $socialUser = User::where('email', $user->email)->first();
-
-        dd($socialUser);
 
         $password = str_random(8);
         if (!$socialUser) {
