@@ -16,9 +16,8 @@ class SocialLoginController extends Controller {
     }
 
     public function facebook () {
-        dd('oi');
-        
         $user = Socialite::driver('facebook')->user();
+        dd($user);
         $token = JWTAuth::fromUser($user);
 
         $socialUser = User::where('email', $user->email)->first();
