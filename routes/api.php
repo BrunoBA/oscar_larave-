@@ -22,15 +22,13 @@ Route::post('register', 'LoginController@register');
 Route::post('login', 'LoginController@authenticate');
 Route::get('categories', 'CategoryController@index');
 
-Route::get('/callback_social/{driver}', 'SocialLoginController@show');
-Route::post('/callback_social/facebook', 'SocialLoginController@facebook');
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/callback_social/{driver}', 'SocialLoginController@show');
+    Route::post('/callback_social/facebook', 'SocialLoginController@facebook');
+});
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', 'LoginController@getAuthenticatedUser');
     Route::get('categories_features', 'CategoryFeatureController@index');
-
     Route::post('/category/{category_id}/feature/{feature_id}', 'BetController@store');
-
-    
-    
 });
