@@ -35,5 +35,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id'  => env('FACEBOOK_ID_API'),
+        'client_secret'  => env('FACEBOOK_SECRET_API'),
+        'redirect' => 'https://oscar-laravel.herokuapp.com/api/callback_social',
+    ],
 
 ];
