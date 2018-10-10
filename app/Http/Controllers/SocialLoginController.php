@@ -19,6 +19,8 @@ class SocialLoginController extends Controller {
 
         $socialUser = User::where('email', $user->email)->first();
 
+        dd($socialUser);
+
         $password = str_random(8);
         if (!$socialUser) {
             $newUser = User::create([
