@@ -21,10 +21,10 @@ use Illuminate\Http\Request;
 Route::post('register', 'LoginController@register');
 Route::post('login', 'LoginController@authenticate');
 Route::get('categories', 'CategoryController@index');
-Route::post('/callback_social/facebook', 'SocialLoginController@facebook');
+Route::get('/callback_social/facebook', 'SocialLoginController@facebook');
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/callback_social/{driver}', 'SocialLoginController@show');
+    Route::get('/login_social/{driver}', 'SocialLoginController@show');
 });
 
 Route::group(['middleware' => ['jwt.verify']], function() {

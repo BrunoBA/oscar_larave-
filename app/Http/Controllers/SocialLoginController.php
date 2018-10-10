@@ -13,8 +13,10 @@ class SocialLoginController extends Controller {
         return Socialite::driver($driver)->redirect();
     }
 
-    public function facebook (Request $request) {
-        dd($request->all());
+    public function facebook () {
+        $user = Socialite::driver('facebook')->user();
+        dd($user);
+
     }
 
 }
