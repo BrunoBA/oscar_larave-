@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id'  => env('FACEBOOK_ID_API'),
         'client_secret'  => env('FACEBOOK_SECRET_API'),
-        'redirect' => 'https://oscar-laravel.herokuapp.com/api/callback_social',
+        'redirect' => 'https://oscar-laravel.herokuapp.com/api/callback_social/facebook',
     ],
 
 ];
