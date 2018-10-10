@@ -16,12 +16,12 @@ class SocialLoginController extends Controller {
     }
 
     public function facebook () {
+        dd('oi');
+        
         $user = Socialite::driver('facebook')->user();
         $token = JWTAuth::fromUser($user);
 
         $socialUser = User::where('email', $user->email)->first();
-
-        dd($socialUser);
 
         $password = str_random(8);
         if (!$socialUser) {
