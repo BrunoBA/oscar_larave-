@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use JWTAuth;
 use App\User;
 use App\Bet;
+use App\Category;
 use App\CategoryFeature;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
@@ -42,6 +43,12 @@ class BetController extends Controller {
         }
 
         return response()->json($newBet);
+    }
+
+    public function show (Request $request) {
+        $user = JWTAuth::parseToken()->authenticate();
+        $bets = Bet::getAllBetsByUser(1);      
+        return response()->json($bets);
     }
 
 }
