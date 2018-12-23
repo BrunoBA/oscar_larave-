@@ -47,7 +47,7 @@ class BetController extends Controller {
 
     public function show (Request $request) {
         $user = JWTAuth::parseToken()->authenticate();
-        $bets = Bet::getAllBetsByUser(1);      
+        $bets = Bet::getAllBetsByUser($user->id);      
         return response()->json($bets);
     }
 
