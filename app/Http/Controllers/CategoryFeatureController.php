@@ -15,21 +15,27 @@ class CategoryFeatureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $user = JWTAuth::parseToken()->authenticate();
-        $categories = Category::with('features', 'features.picture', 'features.feature')->get();
-        $currentBets = Bet::getAllBetsIdByUser($user->id);
-        $favoriteCategoryFeatureId = Bet::getFavoriteBetByUser($user->id);
 
-        foreach ($categories as $category) {
-            foreach ($category->features as &$feature) {
-                $categoryFeatureId = CategoryFeature::getIdByFeatureAndCategory($feature->id, $category->id);
-                
-                $feature['selected'] = in_array($categoryFeatureId, $currentBets);
-                $feature['favorite'] = ($favoriteCategoryFeatureId == $categoryFeatureId);
+        try {
+
+            $user = JWTAuth::parseToken()->authenticate();
+            $categories = Category::with('features', 'features.picture', 'features.feature')->get();
+            $currentBets = Bet::getAllBetsIdByUser($user->id);
+            $favoriteCategoryFeatureId = Bet::getFavoriteBetByUser($user->id);
+    
+            foreach ($categories as $category) {
+                foreach ($category->features as &$feature) {
+                    $categoryFeatureId = CategoryFeature::getIdByFeatureAndCategory($feature->id, $category->id);
+                    
+                    $feature['selected'] = in_array($categoryFeatureId, $currentBets);
+                    $feature['favorite'] = ($favoriteCategoryFeatureId == $categoryFeatureId);
+                }
             }
-        }
 
-        return response()->json($categories);
+            return response()->json($this->makeSuccessResponse($categories), 200);
+        } catch (Exception $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 400);
+        }        
     }
 
 

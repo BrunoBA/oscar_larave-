@@ -43,11 +43,11 @@ class BetController extends Controller {
                 $newBet = null;
             }
 
-        } catch (JWTException $e) {
-            return response()->json(['error' => 'could_not_create_token'], 500);
+        } catch (Execption $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 500);
         }
 
-        return response()->json($newBet);
+        return response()->json($this->makeSuccessResponse($newBet), 200);
     }
 
     public function show (Request $request) {
@@ -55,7 +55,7 @@ class BetController extends Controller {
 
         $userId = ($request->user_id != null) ? $request->user_id : $user->id;
         $bets = Bet::getAllBetsByUser($userId);      
-        return response()->json($bets);
+        return response()->json($this->makeSuccessResponse($bets), 200);
     }
 
 }

@@ -12,6 +12,10 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return response()->json(Category::all());
+        try {
+            return response()->json($this->makeSuccessResponse(Category::all()), 200);
+        } catch (Exception $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 400);
+        }        
     }
 }
