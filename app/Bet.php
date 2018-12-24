@@ -10,6 +10,9 @@ class Bet extends Model {
     
     use SoftDeletes;
 
+    const FAVORITE = 'FAVORITE';
+    const NORMAL = 'NORMAL';
+
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     public function choices() {
@@ -45,6 +48,7 @@ class Bet extends Model {
     public static function getAllBetsByUser ($userId) {
         $bets = self::select(
             [
+                'type',
                 'features.name as feature_name',
                 'categories.name as category_name',
                 'pictures.path',
@@ -56,6 +60,7 @@ class Bet extends Model {
             ->join('pictures', 'features.picture_id', '=', 'pictures.id')
             ->where('bets.user_id', $userId)
             ->whereNull('bets.deleted_at')
+            ->orderBy('categories.id', 'asc')
             ->get()
             ->toArray();
 
@@ -66,6 +71,7 @@ class Bet extends Model {
                 'name' => $bet['feature_name'],
                 'path' => $bet['path'],
                 'feature' => Feature::find($bet['feature_id']),
+                'favorite' => $bet['type'] == self::FAVORITE,
             ];
 
             $result[] = $userChoice;
@@ -87,5 +93,24 @@ class Bet extends Model {
         }, $betsIds);
 
         return $ids;
+    }
+
+    public static function returnType ($type) {
+        return ($type != null) ? self::FAVORITE : self::NORMAL;
+    }
+
+    public static function removeAllFavoriteBetsByUser ($userId) {
+        return self::where('user_id', $userId)
+            ->update(['type' => self::NORMAL]);
+    }
+
+    public static function getFavoriteBetByUser ($userId) {
+        $bet = self::select('category_features_id')
+            ->where('user_id', $userId)
+            ->where('type', self::FAVORITE)
+            ->whereNull('deleted_at')
+            ->first();
+
+        return $bet->category_features_id;
     }
 }

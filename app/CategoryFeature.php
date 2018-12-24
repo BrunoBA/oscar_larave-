@@ -22,5 +22,5 @@ class CategoryFeature extends Model {
                ->where('category_id', $categoryId)
                ->first();
           return $categoryFeature->id;
-    }
+     }
 }

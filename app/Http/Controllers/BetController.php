@@ -29,10 +29,15 @@ class BetController extends Controller {
             
             if ($categoryFeature != null) {
                 $bet = Bet::deleteAllBetsIdByCategoryAndUserId($request->category_id, $user->id);
-            
+                
+                if ($request->favorite) {
+                    $retornado = Bet::removeAllFavoriteBetsByUser($user->id);
+                }
+
                 $newBet = new Bet();
                 $newBet->category_features_id = $categoryFeature->id;
                 $newBet->user_id = $user->id;
+                $newBet->type = Bet::returnType($request->favorite);
                 $newBet->save();
             } else {
                 $newBet = null;

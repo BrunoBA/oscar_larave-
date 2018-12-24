@@ -18,14 +18,14 @@ class CategoryFeatureController extends Controller {
         $user = JWTAuth::parseToken()->authenticate();
         $categories = Category::with('features', 'features.picture', 'features.feature')->get();
         $currentBets = Bet::getAllBetsIdByUser($user->id);
+        $favoriteCategoryFeatureId = Bet::getFavoriteBetByUser($user->id);
 
         foreach ($categories as $category) {
             foreach ($category->features as &$feature) {
-                if (in_array(CategoryFeature::getIdByFeatureAndCategory($feature->id, $category->id), $currentBets)) {
-                    $feature['selected'] = true;
-                } else {
-                    $feature['selected'] = false;
-                }
+                $categoryFeatureId = CategoryFeature::getIdByFeatureAndCategory($feature->id, $category->id);
+                
+                $feature['selected'] = in_array($categoryFeatureId, $currentBets);
+                $feature['favorite'] = ($favoriteCategoryFeatureId == $categoryFeatureId);
             }
         }
 
