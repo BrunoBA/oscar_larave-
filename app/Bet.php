@@ -110,7 +110,7 @@ class Bet extends Model {
             ->where('type', self::FAVORITE)
             ->whereNull('deleted_at')
             ->first();
-
-        return $bet->category_features_id;
+            
+        return ($bet) ? $bet->category_features_id : $bet;
     }
 }
