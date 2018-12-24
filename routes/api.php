@@ -29,7 +29,10 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', 'LoginController@getAuthenticatedUser');
+    Route::get('user/{user_id}/bets', 'BetController@show');
+
     Route::get('categories_features', 'CategoryFeatureController@index');
     Route::get('me/bets', 'BetController@show');
+    
     Route::post('/category/{category_id}/feature/{feature_id}', 'BetController@store');
 });
