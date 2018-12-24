@@ -17,4 +17,12 @@ class Feature extends Model {
         return $this->hasOne('App\Feature', 'id', 'feature_id');
     }
 
+    public function isMovie () {
+        return ($this->feature_id == null);
+    }
+
+    public function isPerson () {
+        return ($this->feature_id != null);
+    }
+
 }

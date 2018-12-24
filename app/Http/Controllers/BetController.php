@@ -44,7 +44,7 @@ class BetController extends Controller {
             }
 
         } catch (Execption $e) {
-            return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 500);
+            return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 400);
         }
 
         return response()->json($this->makeSuccessResponse($newBet), 200);
