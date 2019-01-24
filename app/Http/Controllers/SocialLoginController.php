@@ -37,4 +37,42 @@ class SocialLoginController extends Controller {
 
     }
 
+    public function login (Request $request) {
+
+        $fb = new \Facebook\Facebook([
+            'app_id' => env('FACEBOOK_ID_API'),
+            'app_secret' => env('FACEBOOK_SECRET_API'),
+            'default_graph_version' => 'v2.10',
+            //'default_access_token' => '{access-token}', // optional
+        ]);
+
+        try {
+            $response = $fb->get('/me?fields=id,name,email', $request->token);
+        } catch(\Facebook\Exceptions\FacebookResponseException $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), 500), 400);
+        } catch(\Facebook\Exceptions\FacebookSDKException $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), 500), 400);
+        }catch (\Execption $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), 500), 400);
+        }
+
+        $me = $response->getGraphUser();
+        $user = User::where('email', $me->getEmail())->first();
+
+        $password = str_random(8);
+        if (!$user) {
+            $newUser = User::create([
+                'email' => $me->getEmail(),
+                'name' => $me->getName(),
+                'password' => Hash::make($password)
+            ]);
+
+            $user = $newUser;
+        }
+
+        $token = JWTAuth::fromUser($user);
+
+        return response()->json($this->makeSuccessResponse(compact('user','token')),200);
+    }
+
 }

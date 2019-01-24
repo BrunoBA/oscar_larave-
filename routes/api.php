@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
 
 Route::post('register', 'LoginController@register');
+Route::post('facebook_login', 'SocialLoginController@login');
 Route::post('login', 'LoginController@authenticate');
 Route::get('categories', 'CategoryController@index');
 
