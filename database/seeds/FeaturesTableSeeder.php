@@ -11,178 +11,939 @@ class FeaturesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pictures')->insert([
-            ['id' => 1, 'path' => "PATH.call_me_by_your_name"],
-            ['id' => 2, 'path' => "PATH.darkest_hour"],
-            ['id' => 3, 'path' => "PATH.dunkirk"],
-            ['id' => 4, 'path' => "PATH.get_out"],
-            ['id' => 5, 'path' => "PATH.lady_bird"],
-            ['id' => 6, 'path' => "PATH.phantom_thread"],
-            ['id' => 7, 'path' => "PATH.the_post"],
-            ['id' => 8, 'path' => "PATH.the_shape_of_water"],
-            ['id' => 9, 'path' => "PATH.three_billboards_outside_ebbing_missouri"],
-            ['id' => 10, 'path' => "PATH.roman_j_israel_esq"],
-            ['id' => 11, 'path' => "PATH.i_tonya"],
-            ['id' => 12, 'path' => "PATH.the_florida_project"],
-            ['id' => 13, 'path' => "PATH.all_the_money_in_the_world"],
-            ['id' => 14, 'path' => "PATH.mudbound"],
-            ['id' => 15, 'path' => "PATH.the_boss_baby"],
-            ['id' => 16, 'path' => "PATH.the_breadwinner"],
-            ['id' => 17, 'path' => "PATH.coco"],
-            ['id' => 18, 'path' => "PATH.ferdinand"],
-            ['id' => 19, 'path' => "PATH.loving_vincent"],
-            ['id' => 20, 'path' => "PATH.blade_runner_2049"],
-            ['id' => 21, 'path' => "PATH.beauty_and_the_beast"],
-            ['id' => 22, 'path' => "PATH.victoria_&_abdul"],
-            ['id' => 23, 'path' => "PATH.abacus:_small_enough_to_jail"],
-            ['id' => 24, 'path' => "PATH.faces_places"],
-            ['id' => 25, 'path' => "PATH.icarus"],
-            ['id' => 26, 'path' => "PATH.last_men_in_aleppo"],
-            ['id' => 27, 'path' => "PATH.strong_island"],
-            ['id' => 28, 'path' => "PATH.edith+eddie"],
-            ['id' => 29, 'path' => "PATH.heaven_is_a_traffic_jam_on_the_405"],
-            ['id' => 30, 'path' => "PATH.heroine"],
-            ['id' => 31, 'path' => "PATH.knife_skills"],
-            ['id' => 32, 'path' => "PATH.traffic_stop"],
-            ['id' => 33, 'path' => "PATH.baby_driver"],
-            ['id' => 34, 'path' => "PATH.a_fantastic_woman"],
-            ['id' => 35, 'path' => "PATH.the_insult"],
-            ['id' => 36, 'path' => "PATH.loveless"],
-            ['id' => 37, 'path' => "PATH.on_body_and_soul"],
-            ['id' => 38, 'path' => "PATH.the_square"],
-            ['id' => 39, 'path' => "PATH.wonder"],
-            ['id' => 40, 'path' => "PATH.star_wars:_the_last_jedi"],
-            ['id' => 41, 'path' => "PATH.marshall"],
-            ['id' => 42, 'path' => "PATH.the_greatest_showman"],
-            ['id' => 43, 'path' => "PATH.dear_basketball"],
-            ['id' => 44, 'path' => "PATH.garden_party"],
-            ['id' => 45, 'path' => "PATH.lou"],
-            ['id' => 46, 'path' => "PATH.negative_space"],
-            ['id' => 47, 'path' => "PATH.revolting_rhymes"],
-            ['id' => 48, 'path' => "PATH.dekalb_elementary"],
-            ['id' => 49, 'path' => "PATH.the_eleven_oclock"],
-            ['id' => 50, 'path' => "PATH.my_nephew_emmett"],
-            ['id' => 51, 'path' => "PATH.the_silent_child"],
-            ['id' => 52, 'path' => "PATH.watu_woteall_of_us"],
-            ['id' => 53, 'path' => "PATH.guardians_of_the_galaxy_vol_2"],
-            ['id' => 54, 'path' => "PATH.kong:_skull_island"],
-            ['id' => 55, 'path' => "PATH.war_for_the_planet_of_the_apes"],
-            ['id' => 56, 'path' => "PATH.the_disaster_artist"],
-            ['id' => 57, 'path' => "PATH.logan"],
-            ['id' => 58, 'path' => "PATH.mollys_game"],
-            ['id' => 59, 'path' => "PATH.the_big_sick"],
-            ['id' => 60, 'path' => "PATH.timothee_chalamet"],
-            ['id' => 61, 'path' => "PATH.daniel_day_lewis"],
-            ['id' => 62, 'path' => "PATH.daniel_kaluuya"],
-            ['id' => 63, 'path' => "PATH.gary_oldman"],
-            ['id' => 64, 'path' => "PATH.denzel_washington"],
-            ['id' => 65, 'path' => "PATH.sally_hawkins"],
-            ['id' => 66, 'path' => "PATH.frances_mcdormand"],
-            ['id' => 67, 'path' => "PATH.margot_robbie"],
-            ['id' => 68, 'path' => "PATH.saoirse_ronan"],
-            ['id' => 69, 'path' => "PATH.meryl_streep"],
-            ['id' => 70, 'path' => "PATH.willem_dafoe"],
-            ['id' => 71, 'path' => "PATH.woody_harrelson"],
-            ['id' => 72, 'path' => "PATH.richard_jenkins"],
-            ['id' => 73, 'path' => "PATH.christopher_plummer"],
-            ['id' => 74, 'path' => "PATH.sam_rockwell"],
-            ['id' => 75, 'path' => "PATH.mary_j_blige"],
-            ['id' => 76, 'path' => "PATH.allison_janney"],
-            ['id' => 77, 'path' => "PATH.lesley_manville"],
-            ['id' => 78, 'path' => "PATH.laurie_metcalf"],
-            ['id' => 79, 'path' => "PATH.octavia_spencer"],
-            ['id' => 80, 'path' => "PATH.christopher_nolan"],
-            ['id' => 81, 'path' => "PATH.jordan_peele"],
-            ['id' => 82, 'path' => "PATH.greta_gerwig"],
-            ['id' => 83, 'path' => "PATH.paul_thomas_anderson"],
-            ['id' => 84, 'path' => "PATH.guillermo_del_toro"],
-        ]);
+        DB::table('pictures')->insert(
+            array (
+                0 => 
+                array (
+                    'id' => 1,
+                    'path' => 'a_star_is_born',
+                ),
+                1 => 
+                array (
+                    'id' => 2,
+                    'path' => 'blackkklansman',
+                ),
+                2 => 
+                array (
+                    'id' => 3,
+                    'path' => 'black_panther',
+                ),
+                3 => 
+                array (
+                    'id' => 4,
+                    'path' => 'bohemian_rhapsody',
+                ),
+                4 => 
+                array (
+                    'id' => 5,
+                    'path' => 'green_book',
+                ),
+                5 => 
+                array (
+                    'id' => 6,
+                    'path' => 'roma',
+                ),
+                6 => 
+                array (
+                    'id' => 7,
+                    'path' => 'the_favourite',
+                ),
+                7 => 
+                array (
+                    'id' => 8,
+                    'path' => 'vice',
+                ),
+                8 => 
+                array (
+                    'id' => 9,
+                    'path' => 'at_eternitys_gate',
+                ),
+                9 => 
+                array (
+                    'id' => 10,
+                    'path' => 'the_wife',
+                ),
+                10 => 
+                array (
+                    'id' => 11,
+                    'path' => 'can_you_ever_forgive_me',
+                ),
+                11 => 
+                array (
+                    'id' => 12,
+                    'path' => 'if_beale_street_could_talk',
+                ),
+                12 => 
+                array (
+                    'id' => 13,
+                    'path' => 'adam_mckay',
+                ),
+                13 => 
+                array (
+                    'id' => 14,
+                    'path' => 'alfonso_cuaron',
+                ),
+                14 => 
+                array (
+                    'id' => 15,
+                    'path' => 'pawel_pawlikowski',
+                ),
+                15 => 
+                array (
+                    'id' => 16,
+                    'path' => 'spike_lee',
+                ),
+                16 => 
+                array (
+                    'id' => 17,
+                    'path' => 'yorgos_lanthimos',
+                ),
+                17 => 
+                array (
+                    'id' => 18,
+                    'path' => 'first_reformed',
+                ),
+                18 => 
+                array (
+                    'id' => 19,
+                    'path' => 'the_ballad_of_buster_scruggs',
+                ),
+                19 => 
+                array (
+                    'id' => 20,
+                    'path' => 'cold_war',
+                ),
+                20 => 
+                array (
+                    'id' => 21,
+                    'path' => 'nunca_deixes_de_olhar',
+                ),
+                21 => 
+                array (
+                    'id' => 22,
+                    'path' => 'first_man',
+                ),
+                22 => 
+                array (
+                    'id' => 23,
+                    'path' => 'mary_poppins_returns',
+                ),
+                23 => 
+                array (
+                    'id' => 24,
+                    'path' => 'mary_queen_of_scots',
+                ),
+                24 => 
+                array (
+                    'id' => 25,
+                    'path' => 'border',
+                ),
+                25 => 
+                array (
+                    'id' => 26,
+                    'path' => 'isle_of_dogs',
+                ),
+                26 => 
+                array (
+                    'id' => 27,
+                    'path' => 'rbg',
+                ),
+                27 => 
+                array (
+                    'id' => 28,
+                    'path' => 'a_quiet_place',
+                ),
+                28 => 
+                array (
+                    'id' => 29,
+                    'path' => 'avengers_infinity_war',
+                ),
+                29 => 
+                array (
+                    'id' => 30,
+                    'path' => 'christopher_robin',
+                ),
+                30 => 
+                array (
+                    'id' => 31,
+                    'path' => 'ready_player_one',
+                ),
+                31 => 
+                array (
+                    'id' => 32,
+                    'path' => 'solo_a_star_wars_story',
+                ),
+                32 => 
+                array (
+                    'id' => 33,
+                    'path' => 'free_solo',
+                ),
+                33 => 
+                array (
+                    'id' => 34,
+                    'path' => 'hale_county_this_morning_this_evening',
+                ),
+                34 => 
+                array (
+                    'id' => 35,
+                    'path' => 'minding_the_gap',
+                ),
+                35 => 
+                array (
+                    'id' => 36,
+                    'path' => 'of_fathers_and_sons',
+                ),
+                36 => 
+                array (
+                    'id' => 37,
+                    'path' => 'a_night_at_the_garden',
+                ),
+                37 => 
+                array (
+                    'id' => 38,
+                    'path' => 'black_sheep',
+                ),
+                38 => 
+                array (
+                    'id' => 39,
+                    'path' => 'end_game',
+                ),
+                39 => 
+                array (
+                    'id' => 40,
+                    'path' => 'lifeboat',
+                ),
+                40 => 
+                array (
+                    'id' => 41,
+                    'path' => 'period_end_of_sentence',
+                ),
+                41 => 
+                array (
+                    'id' => 42,
+                    'path' => 'incredibles_2',
+                ),
+                42 => 
+                array (
+                    'id' => 43,
+                    'path' => 'mirai',
+                ),
+                43 => 
+                array (
+                    'id' => 44,
+                    'path' => 'ralph_breaks_the_internet',
+                ),
+                44 => 
+                array (
+                    'id' => 45,
+                    'path' => 'spider_man_into_the_spider_verse',
+                ),
+                45 => 
+                array (
+                    'id' => 46,
+                    'path' => 'animal_behaviour',
+                ),
+                46 => 
+                array (
+                    'id' => 47,
+                    'path' => 'bao',
+                ),
+                47 => 
+                array (
+                    'id' => 48,
+                    'path' => 'late_afternoon',
+                ),
+                48 => 
+                array (
+                    'id' => 49,
+                    'path' => 'one_small_step',
+                ),
+                49 => 
+                array (
+                    'id' => 50,
+                    'path' => 'weekends',
+                ),
+                50 => 
+                array (
+                    'id' => 51,
+                    'path' => 'detainment',
+                ),
+                51 => 
+                array (
+                    'id' => 52,
+                    'path' => 'fauve',
+                ),
+                52 => 
+                array (
+                    'id' => 53,
+                    'path' => 'marguerite',
+                ),
+                53 => 
+                array (
+                    'id' => 54,
+                    'path' => 'mother',
+                ),
+                54 => 
+                array (
+                    'id' => 55,
+                    'path' => 'skin',
+                ),
+                55 => 
+                array (
+                    'id' => 56,
+                    'path' => 'cafarnaum',
+                ),
+                56 => 
+                array (
+                    'id' => 57,
+                    'path' => 'shoplifters',
+                ),
+                57 => 
+                array (
+                    'id' => 58,
+                    'path' => 'bradley_cooper',
+                ),
+                58 => 
+                array (
+                    'id' => 59,
+                    'path' => 'christian_bale',
+                ),
+                59 => 
+                array (
+                    'id' => 60,
+                    'path' => 'rami_malek',
+                ),
+                60 => 
+                array (
+                    'id' => 61,
+                    'path' => 'viggo_mortensen',
+                ),
+                61 => 
+                array (
+                    'id' => 62,
+                    'path' => 'willem_dafoe',
+                ),
+                62 => 
+                array (
+                    'id' => 63,
+                    'path' => 'glenn_close',
+                ),
+                63 => 
+                array (
+                    'id' => 64,
+                    'path' => 'lady_gaga',
+                ),
+                64 => 
+                array (
+                    'id' => 65,
+                    'path' => 'melissa_mccarthy',
+                ),
+                65 => 
+                array (
+                    'id' => 66,
+                    'path' => 'olivia_colman',
+                ),
+                66 => 
+                array (
+                    'id' => 67,
+                    'path' => 'yalitza_aparicio',
+                ),
+                67 => 
+                array (
+                    'id' => 68,
+                    'path' => 'adam_driver',
+                ),
+                68 => 
+                array (
+                    'id' => 69,
+                    'path' => 'mahershala_ali',
+                ),
+                69 => 
+                array (
+                    'id' => 70,
+                    'path' => 'richard_e_grant',
+                ),
+                70 => 
+                array (
+                    'id' => 71,
+                    'path' => 'sam_elliott',
+                ),
+                71 => 
+                array (
+                    'id' => 72,
+                    'path' => 'sam_rockwell',
+                ),
+                72 => 
+                array (
+                    'id' => 73,
+                    'path' => 'amy_adams',
+                ),
+                73 => 
+                array (
+                    'id' => 74,
+                    'path' => 'emma_stone',
+                ),
+                74 => 
+                array (
+                    'id' => 75,
+                    'path' => 'marina_de_tavira',
+                ),
+                75 => 
+                array (
+                    'id' => 76,
+                    'path' => 'rachel_weisz',
+                ),
+                76 => 
+                array (
+                    'id' => 77,
+                    'path' => 'regina_king',
+                ),
+            )
+        );
 
-        DB::table('features')->insert([
-            ['id' => 1, 'picture_id' => 1, 'name' => "Call Me by Your Name", 'feature_id' => null],
-            ['id' => 2, 'picture_id' => 2, 'name' => "Darkest Hour", 'feature_id' => null],
-            ['id' => 3, 'picture_id' => 3, 'name' => "Dunkirk", 'feature_id' => null],
-            ['id' => 4, 'picture_id' => 4, 'name' => "Get Out", 'feature_id' => null],
-            ['id' => 5, 'picture_id' => 5, 'name' => "Lady Bird", 'feature_id' => null],
-            ['id' => 6, 'picture_id' => 6, 'name' => "Phantom Thread", 'feature_id' => null],
-            ['id' => 7, 'picture_id' => 7, 'name' => "The Post", 'feature_id' => null],
-            ['id' => 8, 'picture_id' => 8, 'name' => "The Shape of Water", 'feature_id' => null],
-            ['id' => 9, 'picture_id' => 9, 'name' => "Three Billboards outside Ebbing, Missouri", 'feature_id' => null],
-            ['id' => 10, 'picture_id' => 10, 'name' => "Roman J. Israel, Esq.", 'feature_id' => null],
-            ['id' => 11, 'picture_id' => 11, 'name' => "I, Tonya", 'feature_id' => null],
-            ['id' => 12, 'picture_id' => 12, 'name' => "The Florida Project", 'feature_id' => null],
-            ['id' => 13, 'picture_id' => 13, 'name' => "All the Money in the World", 'feature_id' => null],
-            ['id' => 14, 'picture_id' => 14, 'name' => "Mudbound", 'feature_id' => null],
-            ['id' => 15, 'picture_id' => 15, 'name' => "The Boss Baby", 'feature_id' => null],
-            ['id' => 16, 'picture_id' => 16, 'name' => "The Breadwinner", 'feature_id' => null],
-            ['id' => 17, 'picture_id' => 17, 'name' => "Coco", 'feature_id' => null],
-            ['id' => 18, 'picture_id' => 18, 'name' => "Ferdinand", 'feature_id' => null],
-            ['id' => 19, 'picture_id' => 19, 'name' => "Loving Vincent", 'feature_id' => null],
-            ['id' => 20, 'picture_id' => 20, 'name' => "Blade Runner 2049", 'feature_id' => null],
-            ['id' => 21, 'picture_id' => 21, 'name' => "Beauty and the Beast", 'feature_id' => null],
-            ['id' => 22, 'picture_id' => 22, 'name' => "Victoria & Abdul", 'feature_id' => null],
-            ['id' => 23, 'picture_id' => 23, 'name' => "Abacus: Small Enough to Jail", 'feature_id' => null],
-            ['id' => 24, 'picture_id' => 24, 'name' => "Faces Places", 'feature_id' => null],
-            ['id' => 25, 'picture_id' => 25, 'name' => "Icarus", 'feature_id' => null],
-            ['id' => 26, 'picture_id' => 26, 'name' => "Last Men in Aleppo", 'feature_id' => null],
-            ['id' => 27, 'picture_id' => 27, 'name' => "Strong Island", 'feature_id' => null],
-            ['id' => 28, 'picture_id' => 28, 'name' => "Edith+Eddie", 'feature_id' => null],
-            ['id' => 29, 'picture_id' => 29, 'name' => "Heaven Is a Traffic Jam on the 405", 'feature_id' => null],
-            ['id' => 30, 'picture_id' => 30, 'name' => "Heroin(e)", 'feature_id' => null],
-            ['id' => 31, 'picture_id' => 31, 'name' => "Knife Skills", 'feature_id' => null],
-            ['id' => 32, 'picture_id' => 32, 'name' => "Traffic Stop", 'feature_id' => null],
-            ['id' => 33, 'picture_id' => 33, 'name' => "Baby Driver", 'feature_id' => null],
-            ['id' => 34, 'picture_id' => 34, 'name' => "A Fantastic Woman", 'feature_id' => null],
-            ['id' => 35, 'picture_id' => 35, 'name' => "The Insult", 'feature_id' => null],
-            ['id' => 36, 'picture_id' => 36, 'name' => "Loveless", 'feature_id' => null],
-            ['id' => 37, 'picture_id' => 37, 'name' => "On Body and Soul", 'feature_id' => null],
-            ['id' => 38, 'picture_id' => 38, 'name' => "The Square", 'feature_id' => null],
-            ['id' => 39, 'picture_id' => 39, 'name' => "Wonder", 'feature_id' => null],
-            ['id' => 40, 'picture_id' => 40, 'name' => "Star Wars: The Last Jedi", 'feature_id' => null],
-            ['id' => 41, 'picture_id' => 41, 'name' => "Marshall", 'feature_id' => null],
-            ['id' => 42, 'picture_id' => 42, 'name' => "The Greatest Showman", 'feature_id' => null],
-            ['id' => 43, 'picture_id' => 43, 'name' => "Dear Basketball", 'feature_id' => null],
-            ['id' => 44, 'picture_id' => 44, 'name' => "Garden Party", 'feature_id' => null],
-            ['id' => 45, 'picture_id' => 45, 'name' => "Lou", 'feature_id' => null],
-            ['id' => 46, 'picture_id' => 46, 'name' => "Negative Space", 'feature_id' => null],
-            ['id' => 47, 'picture_id' => 47, 'name' => "Revolting Rhymes", 'feature_id' => null],
-            ['id' => 48, 'picture_id' => 48, 'name' => "DeKalb Elementary", 'feature_id' => null],
-            ['id' => 49, 'picture_id' => 49, 'name' => "The Eleven O'Clock", 'feature_id' => null],
-            ['id' => 50, 'picture_id' => 50, 'name' => "My Nephew Emmett", 'feature_id' => null],
-            ['id' => 51, 'picture_id' => 51, 'name' => "The Silent Child", 'feature_id' => null],
-            ['id' => 52, 'picture_id' => 52, 'name' => "Watu Wote/All of Us", 'feature_id' => null],
-            ['id' => 53, 'picture_id' => 53, 'name' => "Guardians of the Galaxy Vol. 2", 'feature_id' => null],
-            ['id' => 54, 'picture_id' => 54, 'name' => "Kong: Skull Island", 'feature_id' => null],
-            ['id' => 55, 'picture_id' => 55, 'name' => "War for the Planet of the Apes", 'feature_id' => null],
-            ['id' => 56, 'picture_id' => 56, 'name' => "The Disaster Artist", 'feature_id' => null],
-            ['id' => 57, 'picture_id' => 57, 'name' => "Logan", 'feature_id' => null],
-            ['id' => 58, 'picture_id' => 58, 'name' => "Molly's Game", 'feature_id' => null],
-            ['id' => 59, 'picture_id' => 59, 'name' => "The Big Sick", 'feature_id' => null],
-            ['id' => 60, 'picture_id' => 60, 'name' => "Timothée Chalamet", 'feature_id' => 1],
-            ['id' => 61, 'picture_id' => 61, 'name' => "Daniel Day-Lewis", 'feature_id' => 6],
-            ['id' => 62, 'picture_id' => 62, 'name' => "Daniel Kaluuya", 'feature_id' => 4],
-            ['id' => 63, 'picture_id' => 63, 'name' => "Gary Oldman", 'feature_id' => 2],
-            ['id' => 64, 'picture_id' => 64, 'name' => "Denzel Washington", 'feature_id' => 10],
-            ['id' => 65, 'picture_id' => 65, 'name' => "Sally Hawkins", 'feature_id' => 8],
-            ['id' => 66, 'picture_id' => 66, 'name' => "Frances McDormand", 'feature_id' => 9],
-            ['id' => 67, 'picture_id' => 67, 'name' => "Margot Robbie", 'feature_id' => 11],
-            ['id' => 68, 'picture_id' => 68, 'name' => "Saoirse Ronan", 'feature_id' => 5],
-            ['id' => 69, 'picture_id' => 69, 'name' => "Meryl Streep", 'feature_id' => 7],
-            ['id' => 70, 'picture_id' => 70, 'name' => "Willem Dafoe", 'feature_id' => 12],
-            ['id' => 71, 'picture_id' => 71, 'name' => "Woody Harrelson", 'feature_id' => 9],
-            ['id' => 72, 'picture_id' => 72, 'name' => "Richard Jenkins", 'feature_id' => 8],
-            ['id' => 73, 'picture_id' => 73, 'name' => "Christopher Plummer", 'feature_id' => 13],
-            ['id' => 74, 'picture_id' => 74, 'name' => "Sam Rockwell", 'feature_id' => 9],
-            ['id' => 75, 'picture_id' => 75, 'name' => "Mary J. Blige", 'feature_id' => 14],
-            ['id' => 76, 'picture_id' => 76, 'name' => "Allison Janney", 'feature_id' => 11],
-            ['id' => 77, 'picture_id' => 77, 'name' => "Lesley Manville", 'feature_id' => 6],
-            ['id' => 78, 'picture_id' => 78, 'name' => "Laurie Metcalf", 'feature_id' => 5],
-            ['id' => 79, 'picture_id' => 79, 'name' => "Octavia Spencer", 'feature_id' => 8],
-            ['id' => 80, 'picture_id' => 80, 'name' => "Christopher Nolan", 'feature_id' => 3],
-            ['id' => 81, 'picture_id' => 81, 'name' => "Jordan Peele", 'feature_id' => 4],
-            ['id' => 82, 'picture_id' => 82, 'name' => "Greta Gerwig", 'feature_id' => 5],
-            ['id' => 83, 'picture_id' => 83, 'name' => "Paul Thomas Anderson", 'feature_id' => 6],
-            ['id' => 84, 'picture_id' => 84, 'name' => "Guillermo del Toro", 'feature_id' => 8],
-        ]);
+        DB::table('features')->insert(
+            array (
+                0 => 
+                array (
+                    'id' => 1,
+                    'name' => 'A Star Is Born',
+                    'feature_id' => NULL,
+                    'picture_id' => 1,
+                ),
+                1 => 
+                array (
+                    'id' => 2,
+                    'name' => 'BlacKkKlansman',
+                    'feature_id' => NULL,
+                    'picture_id' => 2,
+                ),
+                2 => 
+                array (
+                    'id' => 3,
+                    'name' => 'Black Panther',
+                    'feature_id' => NULL,
+                    'picture_id' => 3,
+                ),
+                3 => 
+                array (
+                    'id' => 4,
+                    'name' => 'Bohemian Rhapsody',
+                    'feature_id' => NULL,
+                    'picture_id' => 4,
+                ),
+                4 => 
+                array (
+                    'id' => 5,
+                    'name' => 'Green Book',
+                    'feature_id' => NULL,
+                    'picture_id' => 5,
+                ),
+                5 => 
+                array (
+                    'id' => 6,
+                    'name' => 'Roma',
+                    'feature_id' => NULL,
+                    'picture_id' => 6,
+                ),
+                6 => 
+                array (
+                    'id' => 7,
+                    'name' => 'The Favourite',
+                    'feature_id' => NULL,
+                    'picture_id' => 7,
+                ),
+                7 => 
+                array (
+                    'id' => 8,
+                    'name' => 'Vice',
+                    'feature_id' => NULL,
+                    'picture_id' => 8,
+                ),
+                8 => 
+                array (
+                    'id' => 9,
+                    'name' => 'At Eternity\'s Gate',
+                    'feature_id' => NULL,
+                    'picture_id' => 9,
+                ),
+                9 => 
+                array (
+                    'id' => 10,
+                    'name' => 'The Wife',
+                    'feature_id' => NULL,
+                    'picture_id' => 10,
+                ),
+                10 => 
+                array (
+                    'id' => 11,
+                    'name' => 'Can You Ever Forgive Me?',
+                    'feature_id' => NULL,
+                    'picture_id' => 11,
+                ),
+                11 => 
+                array (
+                    'id' => 12,
+                    'name' => 'If Beale Street Could Talk',
+                    'feature_id' => NULL,
+                    'picture_id' => 12,
+                ),
+                12 => 
+                array (
+                    'id' => 13,
+                    'name' => 'Adam McKay',
+                    'feature_id' => NULL,
+                    'picture_id' => 13,
+                ),
+                13 => 
+                array (
+                    'id' => 14,
+                    'name' => 'Alfonso Cuarón',
+                    'feature_id' => NULL,
+                    'picture_id' => 14,
+                ),
+                14 => 
+                array (
+                    'id' => 15,
+                    'name' => 'Pawel Pawlikowski',
+                    'feature_id' => NULL,
+                    'picture_id' => 15,
+                ),
+                15 => 
+                array (
+                    'id' => 16,
+                    'name' => 'Spike Lee',
+                    'feature_id' => NULL,
+                    'picture_id' => 16,
+                ),
+                16 => 
+                array (
+                    'id' => 17,
+                    'name' => 'Yorgos Lanthimos',
+                    'feature_id' => NULL,
+                    'picture_id' => 17,
+                ),
+                17 => 
+                array (
+                    'id' => 18,
+                    'name' => 'First Reformed',
+                    'feature_id' => NULL,
+                    'picture_id' => 18,
+                ),
+                18 => 
+                array (
+                    'id' => 19,
+                    'name' => 'The Ballad of Buster Scruggs',
+                    'feature_id' => NULL,
+                    'picture_id' => 19,
+                ),
+                19 => 
+                array (
+                    'id' => 20,
+                    'name' => 'Cold War',
+                    'feature_id' => NULL,
+                    'picture_id' => 20,
+                ),
+                20 => 
+                array (
+                    'id' => 21,
+                    'name' => 'Nunca Deixes de Olhar',
+                    'feature_id' => NULL,
+                    'picture_id' => 21,
+                ),
+                21 => 
+                array (
+                    'id' => 22,
+                    'name' => 'First Man',
+                    'feature_id' => NULL,
+                    'picture_id' => 22,
+                ),
+                22 => 
+                array (
+                    'id' => 23,
+                    'name' => 'Mary Poppins Returns',
+                    'feature_id' => NULL,
+                    'picture_id' => 23,
+                ),
+                23 => 
+                array (
+                    'id' => 24,
+                    'name' => 'Mary Queen of Scots',
+                    'feature_id' => NULL,
+                    'picture_id' => 24,
+                ),
+                24 => 
+                array (
+                    'id' => 25,
+                    'name' => 'Border',
+                    'feature_id' => NULL,
+                    'picture_id' => 25,
+                ),
+                25 => 
+                array (
+                    'id' => 26,
+                    'name' => 'Isle of Dogs',
+                    'feature_id' => NULL,
+                    'picture_id' => 26,
+                ),
+                26 => 
+                array (
+                    'id' => 27,
+                    'name' => 'RBG',
+                    'feature_id' => NULL,
+                    'picture_id' => 27,
+                ),
+                27 => 
+                array (
+                    'id' => 28,
+                    'name' => 'A Quiet Place',
+                    'feature_id' => NULL,
+                    'picture_id' => 28,
+                ),
+                28 => 
+                array (
+                    'id' => 29,
+                    'name' => 'Avengers: Infinity War',
+                    'feature_id' => NULL,
+                    'picture_id' => 29,
+                ),
+                29 => 
+                array (
+                    'id' => 30,
+                    'name' => 'Christopher Robin',
+                    'feature_id' => NULL,
+                    'picture_id' => 30,
+                ),
+                30 => 
+                array (
+                    'id' => 31,
+                    'name' => 'Ready Player One',
+                    'feature_id' => NULL,
+                    'picture_id' => 31,
+                ),
+                31 => 
+                array (
+                    'id' => 32,
+                    'name' => 'Solo: A Star Wars Story',
+                    'feature_id' => NULL,
+                    'picture_id' => 32,
+                ),
+                32 => 
+                array (
+                    'id' => 33,
+                    'name' => 'Free Solo',
+                    'feature_id' => NULL,
+                    'picture_id' => 33,
+                ),
+                33 => 
+                array (
+                    'id' => 34,
+                    'name' => 'Hale County This Morning, This Evening',
+                    'feature_id' => NULL,
+                    'picture_id' => 34,
+                ),
+                34 => 
+                array (
+                    'id' => 35,
+                    'name' => 'Minding the Gap',
+                    'feature_id' => NULL,
+                    'picture_id' => 35,
+                ),
+                35 => 
+                array (
+                    'id' => 36,
+                    'name' => 'Of Fathers and Sons',
+                    'feature_id' => NULL,
+                    'picture_id' => 36,
+                ),
+                36 => 
+                array (
+                    'id' => 37,
+                    'name' => 'A Night at the Garden',
+                    'feature_id' => NULL,
+                    'picture_id' => 37,
+                ),
+                37 => 
+                array (
+                    'id' => 38,
+                    'name' => 'Black Sheep',
+                    'feature_id' => NULL,
+                    'picture_id' => 38,
+                ),
+                38 => 
+                array (
+                    'id' => 39,
+                    'name' => 'End Game',
+                    'feature_id' => NULL,
+                    'picture_id' => 39,
+                ),
+                39 => 
+                array (
+                    'id' => 40,
+                    'name' => 'LIFEBOAT',
+                    'feature_id' => NULL,
+                    'picture_id' => 40,
+                ),
+                40 => 
+                array (
+                    'id' => 41,
+                    'name' => 'Period. End of Sentence.',
+                    'feature_id' => NULL,
+                    'picture_id' => 41,
+                ),
+                41 => 
+                array (
+                    'id' => 42,
+                    'name' => 'Incredibles 2',
+                    'feature_id' => NULL,
+                    'picture_id' => 42,
+                ),
+                42 => 
+                array (
+                    'id' => 43,
+                    'name' => 'Mirai',
+                    'feature_id' => NULL,
+                    'picture_id' => 43,
+                ),
+                43 => 
+                array (
+                    'id' => 44,
+                    'name' => 'Ralph Breaks the Internet',
+                    'feature_id' => NULL,
+                    'picture_id' => 44,
+                ),
+                44 => 
+                array (
+                    'id' => 45,
+                    'name' => 'Spider-Man: Into the Spider-Verse',
+                    'feature_id' => NULL,
+                    'picture_id' => 45,
+                ),
+                45 => 
+                array (
+                    'id' => 46,
+                    'name' => 'Animal Behaviour',
+                    'feature_id' => NULL,
+                    'picture_id' => 46,
+                ),
+                46 => 
+                array (
+                    'id' => 47,
+                    'name' => 'Bao',
+                    'feature_id' => NULL,
+                    'picture_id' => 47,
+                ),
+                47 => 
+                array (
+                    'id' => 48,
+                    'name' => 'Late Afternoon',
+                    'feature_id' => NULL,
+                    'picture_id' => 48,
+                ),
+                48 => 
+                array (
+                    'id' => 49,
+                    'name' => 'One Small Step',
+                    'feature_id' => NULL,
+                    'picture_id' => 49,
+                ),
+                49 => 
+                array (
+                    'id' => 50,
+                    'name' => 'Weekends',
+                    'feature_id' => NULL,
+                    'picture_id' => 50,
+                ),
+                50 => 
+                array (
+                    'id' => 51,
+                    'name' => 'Detainment',
+                    'feature_id' => NULL,
+                    'picture_id' => 51,
+                ),
+                51 => 
+                array (
+                    'id' => 52,
+                    'name' => 'Fauve',
+                    'feature_id' => NULL,
+                    'picture_id' => 52,
+                ),
+                52 => 
+                array (
+                    'id' => 53,
+                    'name' => 'Marguerite',
+                    'feature_id' => NULL,
+                    'picture_id' => 53,
+                ),
+                53 => 
+                array (
+                    'id' => 54,
+                    'name' => 'Mother',
+                    'feature_id' => NULL,
+                    'picture_id' => 54,
+                ),
+                54 => 
+                array (
+                    'id' => 55,
+                    'name' => 'Skin',
+                    'feature_id' => NULL,
+                    'picture_id' => 55,
+                ),
+                55 => 
+                array (
+                    'id' => 56,
+                    'name' => 'Cafarnaum',
+                    'feature_id' => NULL,
+                    'picture_id' => 56,
+                ),
+                56 => 
+                array (
+                    'id' => 57,
+                    'name' => 'Shoplifters',
+                    'feature_id' => NULL,
+                    'picture_id' => 57,
+                ),
+                57 => 
+                array (
+                    'id' => 58,
+                    'name' => 'Bradley Cooper',
+                    'feature_id' => 1,
+                    'picture_id' => 58,
+                ),
+                58 => 
+                array (
+                    'id' => 59,
+                    'name' => 'Christian Bale',
+                    'feature_id' => 8,
+                    'picture_id' => 59,
+                ),
+                59 => 
+                array (
+                    'id' => 60,
+                    'name' => 'Rami Malek',
+                    'feature_id' => 4,
+                    'picture_id' => 60,
+                ),
+                60 => 
+                array (
+                    'id' => 61,
+                    'name' => 'Viggo Mortensen',
+                    'feature_id' => 5,
+                    'picture_id' => 61,
+                ),
+                61 => 
+                array (
+                    'id' => 62,
+                    'name' => 'Willem Dafoe',
+                    'feature_id' => 9,
+                    'picture_id' => 62,
+                ),
+                62 => 
+                array (
+                    'id' => 63,
+                    'name' => 'Glenn Close',
+                    'feature_id' => 10,
+                    'picture_id' => 63,
+                ),
+                63 => 
+                array (
+                    'id' => 64,
+                    'name' => 'Lady Gaga',
+                    'feature_id' => 1,
+                    'picture_id' => 64,
+                ),
+                64 => 
+                array (
+                    'id' => 65,
+                    'name' => 'Melissa McCarthy',
+                    'feature_id' => 11,
+                    'picture_id' => 65,
+                ),
+                65 => 
+                array (
+                    'id' => 66,
+                    'name' => 'Olivia Colman',
+                    'feature_id' => 7,
+                    'picture_id' => 66,
+                ),
+                66 => 
+                array (
+                    'id' => 67,
+                    'name' => 'Yalitza Aparicio',
+                    'feature_id' => 6,
+                    'picture_id' => 67,
+                ),
+                67 => 
+                array (
+                    'id' => 68,
+                    'name' => 'Adam Driver',
+                    'feature_id' => 2,
+                    'picture_id' => 68,
+                ),
+                68 => 
+                array (
+                    'id' => 69,
+                    'name' => 'Mahershala Ali',
+                    'feature_id' => 5,
+                    'picture_id' => 69,
+                ),
+                69 => 
+                array (
+                    'id' => 70,
+                    'name' => 'Richard E. Grant',
+                    'feature_id' => 11,
+                    'picture_id' => 70,
+                ),
+                70 => 
+                array (
+                    'id' => 71,
+                    'name' => 'Sam Elliott',
+                    'feature_id' => 1,
+                    'picture_id' => 71,
+                ),
+                71 => 
+                array (
+                    'id' => 72,
+                    'name' => 'Sam Rockwell',
+                    'feature_id' => 8,
+                    'picture_id' => 72,
+                ),
+                72 => 
+                array (
+                    'id' => 73,
+                    'name' => 'Amy Adams',
+                    'feature_id' => 8,
+                    'picture_id' => 73,
+                ),
+                73 => 
+                array (
+                    'id' => 74,
+                    'name' => 'Emma Stone',
+                    'feature_id' => 7,
+                    'picture_id' => 74,
+                ),
+                74 => 
+                array (
+                    'id' => 75,
+                    'name' => 'Marina de Tavira',
+                    'feature_id' => 6,
+                    'picture_id' => 75,
+                ),
+                75 => 
+                array (
+                    'id' => 76,
+                    'name' => 'Rachel Weisz',
+                    'feature_id' => 7,
+                    'picture_id' => 76,
+                ),
+                76 => 
+                array (
+                    'id' => 77,
+                    'name' => 'Regina King',
+                    'feature_id' => 12,
+                    'picture_id' => 77,
+                ),
+            )
+        );
+        
     }
 }
