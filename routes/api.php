@@ -39,4 +39,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     
     Route::post('/watches/{feature_id}', 'WatchController@store');
     Route::post('/category/{category_id}/feature/{feature_id}', 'BetController@store');
+
+    Route::post('/group', 'GroupController@store');
+    Route::post('/group/{group_id}/add', 'GroupUserController@store');
+    Route::delete('/group/{group_id}/delete/{user_id}', 'GroupUserController@destroy');
 });
