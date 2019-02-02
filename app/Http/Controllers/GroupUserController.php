@@ -13,26 +13,6 @@ use Illuminate\Support\Facades\Validator;
 class GroupUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -84,7 +64,7 @@ class GroupUserController extends Controller
         $currentUser = JWTAuth::parseToken()->authenticate();
 
         if($group == null || !$group->isAdmin($currentUser->id)) {
-            return response()->json($this->makeErrorResponse("Error to remove User", 400), 400);
+            return response()->json($this->makeErrorResponse("Error to Remove User", 400), 400);
         }
 
         if (!GroupUser::checkUserOfGroup($user_id, $group_id)) {

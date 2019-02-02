@@ -9,6 +9,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject {
     use Notifiable;
 
+    const ME = 'me';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,10 +29,20 @@ class User extends Authenticatable implements JWTSubject {
         'password', 'remember_token',
     ];
 
+    // public function group() {
+    //     return $this->belongsTo('App\Group');
+    // }
+
     public function getJWTIdentifier() {
         return $this->getKey();
     }
     public function getJWTCustomClaims() {
         return [];
+    }
+
+    public static function getAll ($name) {
+        return self::orWhere('name', 'like',  "%{$name}%")
+            ->orWhere('name', 'like',  "%{$name}%")
+            ->paginate(10);
     }
 }

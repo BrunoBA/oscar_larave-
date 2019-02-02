@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\CategoryFeature;
 use App\Bet;
+use App\Watch;
 use JWTAuth;
 
 class CategoryFeatureController extends Controller {
@@ -29,6 +30,7 @@ class CategoryFeatureController extends Controller {
                     
                     $feature['selected'] = in_array($categoryFeatureId, $currentBets);
                     $feature['favorite'] = ($favoriteCategoryFeatureId == $categoryFeatureId);
+                    $feature['watched'] = Watch::checkIfWatched($feature->id, $user->id);
                 }
             }
 
