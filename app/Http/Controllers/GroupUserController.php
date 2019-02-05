@@ -82,4 +82,18 @@ class GroupUserController extends Controller
 
         return response()->json($this->makeSuccessResponse("User Deleted"), 200);
     }
+
+    public function show (Request $request)
+    {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+
+        try {   
+            $groupUser = GroupUser::getGroupsByUser($currentUser->id);
+            // dd($groupUser);
+        } catch (Execption $e) {
+            return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 400);
+        }
+
+        return response()->json($this->makeSuccessResponse($groupUser), 200);
+    }
 }

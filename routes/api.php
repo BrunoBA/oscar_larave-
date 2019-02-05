@@ -36,7 +36,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     Route::get('categories_features', 'CategoryFeatureController@index');
     Route::get('me/bets', 'BetController@show');
-    Route::get('me/groups', 'GroupController@show');
+    Route::get('me/groups', 'GroupUserController@show');
     Route::get('me/watches', 'WatchController@show');
     
     Route::post('/watches/{feature_id}', 'WatchController@store');

@@ -29,4 +29,12 @@ class GroupUser extends Model
             ->join('users', 'users.id', 'group_users.user_id')
             ->get();
     }
+
+    public static function getGroupsByUser ($userId) {
+        return self::select(['groups.name', 'groups.id'])
+            ->join('groups', 'groups.id', 'group_users.group_id')
+            ->where('group_users.user_id', $userId)
+            ->whereNull('group_users.deleted_at')
+            ->get();
+    }
 }
