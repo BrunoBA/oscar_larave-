@@ -26,6 +26,7 @@ class GroupUser extends Model
         return self::select(['users.id', 'name'])
             ->where('group_id', $groupId)
             ->whereNull('deleted_at')
+            ->whereNull('group_users.deleted_at')
             ->join('users', 'users.id', 'group_users.user_id')
             ->get();
     }
@@ -35,6 +36,7 @@ class GroupUser extends Model
             ->join('groups', 'groups.id', 'group_users.group_id')
             ->where('group_users.user_id', $userId)
             ->whereNull('group_users.deleted_at')
+            ->whereNull('groups.deleted_at')
             ->get();
     }
 }

@@ -21,7 +21,7 @@ class GroupUserController extends Controller
     public function store(Request $request, $group_id)
     {
         $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
+            'users_id' => 'required',
         ]);
 
         if($validator->fails()){
@@ -31,25 +31,42 @@ class GroupUserController extends Controller
         $group = Group::find($group_id);
         $currentUser = JWTAuth::parseToken()->authenticate();
 
-        if($group == null || 
-        !$group->isAdmin($currentUser->id) || 
-        GroupUser::checkUserOfGroup($request->user_id, $group_id)) {
-            return response()->json($this->makeErrorResponse("Error to Insert User", 400), 400);
+        if ($group == null) {
+            return response()->json($this->makeErrorResponse("Invalid Group", 400), 400);
+        }
+        if (!$group->isAdmin($currentUser->id)) {
+            return response()->json($this->makeErrorResponse("You're not admin", 400), 400);
+        }
+
+        if (is_array($request->users_id)) {
+            $users = $request->users_id;
+        } else {
+            $users[] = $request->users_id;
+        }
+
+        foreach ($users as $user_id) {
+            if (GroupUser::checkUserOfGroup($user_id, $group_id)) {
+                return response()->json($this->makeErrorResponse("This user is already in this group", 400), 400);
+            }
         }
 
         try {   
-            $groupUser = GroupUser::create(
-                [
-                    'group_id' => $group_id,
-                    'user_id' => $request->user_id
-                ]
-            );
+            foreach ($users as $user_id) {
+                GroupUser::create(
+                    [
+                        'group_id' => $group_id,
+                        'user_id' => $user_id
+                    ]
+                );
+            }
+
+            $groupUser = GroupUser::getUsersFromGroup($group_id);
+            
+            return response()->json($this->makeSuccessResponse($groupUser), 200);
 
         } catch (Execption $e) {
             return response()->json($this->makeErrorResponse($e->getMessage(), $e->getStatusCode()), 400);
         }
-
-        return response()->json($this->makeSuccessResponse($groupUser), 200);
     }
 
     /**
